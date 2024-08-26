@@ -1,43 +1,42 @@
 <!DOCTYPE html> 
-
 <html lang="en"> 
-
 <head> 
-
     <meta charset="UTF-8"> 
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-
-    <title>Interactive Briefcase</title> 
-
+    <title>KPSFO Interactive Adult Crash Cart</title> 
     <link rel="stylesheet" href="styles.css"> 
-
 </head> 
-
 <body> 
+    <header>
+        <img src="KP_logo.png" alt="KPSFO Logo" class="logo">
+    </header>
+    <div class="container"> <!-- Changed from briefcase to container -->
+        <div class="briefcase"> 
+            <div class="item" id="Adult Crash Cart" data-description="Adult Crash Cart" style="top: 40px; left: 318px; width: 60px; height: 25px;"></div> 
 
-    <div class="briefcase"> 
+            <!-- Big Items -->
+            <div class="item" id="lidocaine" data-description="Lidocaine 2g per 500mL" style="top: 10px; left: 5px; width: 100px; height: 150px;"></div> 
+            <div class="item" id="dopamine" data-description="Dopamine 400mg per 250mL" style="top: 175px; left: 5px; width: 90px; height: 210px;"></div> 
+            <div class="item" id="dextrose" data-description="Dextrose 25g per 50mL" style="top: 70px; left: 130px; width: 170px; height: 33px;"></div> 
+            <div class="item" id="amiodarone" data-description="Amiodarone 360mg per 200mL" style="top: 110px; left: 310px; width: 100px; height: 180px;"></div> 
+            <div class="item" id="sodium-bicarbonate" data-description="Sodium Bicarbonate 50mEq per 50mL" style="top: 75px; left: 420px; width: 160px; height: 130px;"></div> 
+            <div class="item" id="epinephrine" data-description="Epinephrine 1mg per 10mL" style="top: 220px; left: 450px; width: 135px; height: 145px;"></div> 
 
-        <div class="item" id="first-aid" data-description="First Aid Recovery Spray"></div> 
+            <!-- Vials -->
+            <div class="item" id="flumazenil" data-description="Flumazenil Vial" style="top: 105px; left: 130px; width: 80px; height: 20px;"></div>
+            <div class="item" id="norepinephrine" data-description="Norepinephrine Vial" style="top: 105px; left: 220px; width: 80px; height: 25px;"></div>
+            <div class="item" id="amiodarone-vial" data-description="Amiodarone Vial" style="top: 135px; left: 130px; width: 80px; height: 25px;"></div>
+            <div class="item" id="naloxone" data-description="Naloxone Vial" style="top: 140px; left: 220px; width: 80px; height: 25px;"></div>
+            <div class="item" id="adenosine" data-description="Adenosine Vial" style="top: 198px; left: 130px; width: 80px; height: 25px;"></div>
+            <div class="item" id="magnesium-ns" data-description="Magnesium and 0.9% NS Vials" style="top: 198px; left: 230px; width: 80px; height: 30px;"></div>
 
-        <div class="item" id="red-box" data-description="Red Box"></div> 
-
-        <div class="item" id="books" data-description="Books: Republic, Confucius, Dialogue"></div> 
-
-        <div class="item" id="black-box" data-description="Black Box"></div> 
-
-        <div class="item" id="coin" data-description="Coin or Medallion"></div> 
-
-        <div class="item" id="red-device" data-description="Red Electronic Device"></div> 
-
-    </div> 
-
-    <div id="description-box"></div> 
-
+            <!-- Syringes -->
+            <div class="item" id="atropine" data-description="Atropine Syringe" style="top: 230px; left: 130px; width: 170px; height: 50px;"></div>
+            <div class="item" id="calcium-chloride" data-description="Calcium Chloride Syringe" style="top: 280px; left: 130px; width: 170px; height: 50px;"></div>
+            <div class="item" id="lidocaine-syringe" data-description="Lidocaine 2% Syringe" style="top: 330px; left: 130px; width: 170px; height: 50px;"></div>
+        </div> 
+        <div id="description-box">Adult Crash Cart</div> <!-- Default description -->
+    </div>
     <script src="script.js"></script> 
-
 </body> 
-
-</html> 
-
- 
+</html>

@@ -1,33 +1,20 @@
-document.querySelectorAll('.item').forEach(item => { 
+document.addEventListener('DOMContentLoaded', function() {
+    const items = document.querySelectorAll('.item');
+    const descriptionBox = document.getElementById('description-box');
 
-    item.addEventListener('mouseover', () => { 
+    // Set default description
+    descriptionBox.textContent = 'Adult Crash Cart';
 
-        const descriptionBox = document.getElementById('description-box'); 
+    items.forEach(item => {
+        item.addEventListener('mouseover', function() {
+            const description = this.getAttribute('data-description');
+            descriptionBox.textContent = description;
+            descriptionBox.style.display = 'block'; // Ensure it is visible on hover
+        });
 
-        descriptionBox.textContent = item.getAttribute('data-description'); 
-
-        descriptionBox.style.display = 'block'; 
-
-    }); 
-
-  
-
-    item.addEventListener('mouseout', () => { 
-
-        const descriptionBox = document.getElementById('description-box'); 
-
-        descriptionBox.style.display = 'none'; 
-
-    }); 
-
-  
-
-    item.addEventListener('mousedown', () => { 
-
-        alert(item.getAttribute('data-description')); 
-
-    }); 
-
-}); 
-
- 
+        item.addEventListener('mouseout', function() {
+            // Keep the default text when the mouse is out
+            descriptionBox.textContent = 'Adult Crash Cart';
+        });
+    });
+});

@@ -1,7 +1,7 @@
 /* Existing styles */
 body { 
     display: flex; 
-    flex-direction: column; /* Allow header and map to stack vertically */
+    flex-direction: column; 
     align-items: center; 
     height: 100vh; 
     background-color: #333; 
@@ -9,39 +9,39 @@ body {
 } 
 
 header {
-    background-color: #f4f4f4; /* Light gray background */
+    background-color: #f4f4f4;
     padding: 20px;
     text-align: center;
-    border-bottom: 2px solid #ddd; /* Light gray border */
-    width: 100%; /* Full width */
-    box-sizing: border-box; /* Ensure padding is included in the width */
-    position: relative; /* Allow positioning within header */
-    z-index: 1; /* Ensure header is above other content */
+    border-bottom: 2px solid #ddd;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
 }
 
 header .logo {
-    max-width: 350px; /* Adjust this value to make the logo smaller */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 350px;
+    height: auto;
 }
 
 .container {
-    margin-top: 20px; /* Space between header and content */
-    position: relative; /* Ensure the map and description box align properly */
-    background-color: #fff; /* Set background color to white for container only */
-    padding: 10px; /* Optional padding */
-    border-radius: 8px; /* Optional rounded corners */
-    z-index: 0; /* Ensure container is below header */
-    margin-bottom: 20px; /* Add space below the container */
+    margin-top: 20px;
+    position: relative;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 0;
+    margin-bottom: 20px;
 }
 
 .briefcase { 
     position: relative; 
-    width: 600px; /* Increased width */
-    height: 400px; /* Increased height */
-    background-image: url('Adult_Crash_Cart.jpeg');
+    width: 600px; 
+    height: 400px; 
+    background-image: url('images/Adult_Crash_Cart.jpeg');
     background-size: cover; 
     border: 2px solid #555; 
-    margin-top: 60px; /* Move the interactive image down */
+    margin-top: 60px; 
 }
 
 .item { 
@@ -55,10 +55,9 @@ header .logo {
     border-color: yellow; 
 } 
 
-/* Ensure description-box is above other content */
 #description-box { 
     position: absolute; 
-    top: 20px; /* Adjust as needed */
+    top: -55px; /* Move the description box up by changing this value */
     left: 10px; 
     padding: 10px; 
     background-color: rgba(0, 0, 0, 0.7); 
@@ -70,14 +69,67 @@ header .logo {
     z-index: 1; /* Ensure it's on top of other elements */
 }
 
+
 @media (max-width: 600px) {
     .briefcase {
         width: 100%;
         height: auto;
-        background-size: contain; /* Adjust background size for smaller screens */
+        background-size: contain;
     }
 
     #description-box {
-        width: calc(100% - 20px); /* Adjust width for smaller screens */
+        width: calc(100% - 20px);
     }
 }
+
+.slide-in-panel {
+    position: fixed;
+    bottom: -100%; /* Initially hidden off-screen at the bottom */
+    left: 50%; /* Start horizontally centered */
+    transform: translateX(-50%); /* Center the panel horizontally */
+    width: 80%; /* Adjust width as needed */
+    max-width: 600px; /* Optional max-width */
+    height: 300px; /* Adjust height as needed */
+    background-color: #f4f4f4;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+    transition: bottom 0.3s ease-in-out; /* Smooth sliding transition */
+    z-index: 2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.panel-content {
+    width: 100%; /* Ensure content takes full width of the panel */
+    text-align: center;
+}
+
+.panel-image {
+    max-width: 50%; /* Adjusts to the panel width */
+    max-height: 50%; /* Restrict height to prevent overflow */
+    object-fit: contain; /* Maintain aspect ratio */
+}
+
+.panel-description {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+.slide-in-panel.open {
+    bottom: 8%;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    position: absolute; /* Change to absolute to position relative to slide-in panel */
+    top: 10px; /* Distance from the top */
+    right: 10px; /* Distance from the right */
+    cursor: pointer;
+    z-index: 3; /* Ensure it's above other content in the panel */
+}
+
